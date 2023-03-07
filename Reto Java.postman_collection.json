@@ -125,29 +125,6 @@
 				}
 			},
 			"response": []
-		},
-		{
-			"name": "New Request",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"pedro\",\r\n    \"email\": \"pedro@mail.com\",\r\n    \r\n}"
-				},
-				"url": {
-					"raw": "http://localhost:8080/usuario",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"usuario"
-					]
-				}
-			},
-			"response": []
 		}
 	]
 }
