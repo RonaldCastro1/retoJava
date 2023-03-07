@@ -2,12 +2,7 @@ package com.example.retoJava.Controller;
 
 import java.util.ArrayList;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.jaxb.PageAdapter;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,20 +32,10 @@ public class ApiDemo {
         return usuarioService.findAll();
     }
 
-    @GetMapping("/all/{page}")
-    public Page<Usuario> findAll(@PathVariable Integer page){
-        return usuarioService.findAll(PageRequest.of(0, 5));
-    }
-
     @GetMapping("/find/{id}")
     public Optional<Usuario> getUserById(@PathVariable("id") long id){
         return usuarioService.getUserById(id);
     }
-
-    /* @GetMapping("/page")
-    public ArrayList<Usuario> getAllUser(Pageable pageable){
-        return usuarioService.getAllUser();
-    } */
 
     @PostMapping("/save")
     public Usuario saveUser(@Validated @RequestBody Usuario u){

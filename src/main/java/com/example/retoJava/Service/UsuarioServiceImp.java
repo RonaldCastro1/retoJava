@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import com.example.retoJava.Model.Usuario;
@@ -22,10 +20,6 @@ public class UsuarioServiceImp implements UsuarioService{
     public ArrayList<Usuario> findAll() {
         return (ArrayList<Usuario>) usuarioRepository.findAll();
     }
-
-    @Override
-    public Page<Usuario> findAll(Pageable pageable) {
-        return (Page<Usuario>) usuarioRepository.findAll(pageable);}
 
     @Override
     public Optional<Usuario> getUserById(long id) {
@@ -47,10 +41,4 @@ public class UsuarioServiceImp implements UsuarioService{
             return false;
         }
     }
-
-    /* @Override
-    public Page<Usuario> findAll(Pageable pageable) throws Exception {
-        return (Page<Usuario>) usuarioRepository.findAll(pageable);
-    } */
-    
 }

@@ -5,11 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 
 
 @Entity
+@Table(name="usuario")
 public class Usuario {
 
     @Id
@@ -17,19 +19,19 @@ public class Usuario {
     @Column(unique = true, nullable = false)
     private long id;
    
-    @NotBlank(message = "El nombre es obligatorio")
+    @NotEmpty
     private String name;
 
-    @NotBlank
+    @NotEmpty
     private String inventory;
 
-    @NotBlank
-    private String enabled;
+    @NotEmpty
+    private Boolean enabled;
 
-    @NotBlank
+    @NotEmpty
     private String min;
 
-    @NotBlank
+    @NotEmpty
     private String max;
 
     public Usuario(String name, String inventory,String enabled, String min, String max) {
@@ -62,10 +64,10 @@ public class Usuario {
         this.inventory = inventory;
     }
 
-    public String getEnabled() {
+    public Boolean getEnabled() {
         return enabled;
     }
-    public void setEnabled(String enabled) {
+    public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
 
