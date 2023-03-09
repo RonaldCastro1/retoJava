@@ -26,7 +26,7 @@ public class Usuario {
     private String inventory;
 
     @NotEmpty
-    private Boolean enabled;
+    private String enabled;
 
     @NotEmpty
     private String min;
@@ -64,10 +64,10 @@ public class Usuario {
         this.inventory = inventory;
     }
 
-    public Boolean getEnabled() {
+    public String getEnabled() {
         return enabled;
     }
-    public void setEnabled(Boolean enabled) {
+    public void setEnabled(String enabled) {
         this.enabled = enabled;
     }
 
